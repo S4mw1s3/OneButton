@@ -68,14 +68,14 @@ void OneButton::setPressTicks(int ticks) {
 
 
 // save function for click event
-void OneButton::attachClick(callbackFunction newFunction)
+void OneButton::attachClick(oneButtonCallback newFunction)
 {
   _clickFunc = newFunction;
 } // attachClick
 
 
 // save function for doubleClick event
-void OneButton::attachDoubleClick(callbackFunction newFunction)
+void OneButton::attachDoubleClick(oneButtonCallback newFunction)
 {
   _doubleClickFunc = newFunction;
 } // attachDoubleClick
@@ -83,25 +83,25 @@ void OneButton::attachDoubleClick(callbackFunction newFunction)
 
 // save function for press event
 // DEPRECATED, is replaced by attachLongPressStart, attachLongPressStop, attachDuringLongPress, 
-void OneButton::attachPress(callbackFunction newFunction)
+void OneButton::attachPress(oneButtonCallback newFunction)
 {
   _pressFunc = newFunction;
 } // attachPress
 
 // save function for longPressStart event
-void OneButton::attachLongPressStart(callbackFunction newFunction)
+void OneButton::attachLongPressStart(oneButtonCallback newFunction)
 {
   _longPressStartFunc = newFunction;
 } // attachLongPressStart
 
 // save function for longPressStop event
-void OneButton::attachLongPressStop(callbackFunction newFunction)
+void OneButton::attachLongPressStop(oneButtonCallback newFunction)
 {
   _longPressStopFunc = newFunction;
 } // attachLongPressStop
 
 // save function for during longPress event
-void OneButton::attachDuringLongPress(callbackFunction newFunction)
+void OneButton::attachDuringLongPress(oneButtonCallback newFunction)
 {
   _duringLongPressFunc = newFunction;
 } // attachDuringLongPress

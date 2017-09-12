@@ -21,7 +21,7 @@
 // ----- Callback function types -----
 
 extern "C" {
-  typedef void (*callbackFunction)(void);
+  typedef void (*oneButtonCallback)(void);
 }
 
 
@@ -43,12 +43,12 @@ public:
   void setPressTicks(int ticks);
 
   // attach functions that will be called when button was pressed in the specified way.
-  void attachClick(callbackFunction newFunction);
-  void attachDoubleClick(callbackFunction newFunction);
-  void attachPress(callbackFunction newFunction); // DEPRECATED, replaced by longPressStart, longPressStop and duringLongPress
-  void attachLongPressStart(callbackFunction newFunction);
-  void attachLongPressStop(callbackFunction newFunction);
-  void attachDuringLongPress(callbackFunction newFunction);
+  void attachClick(oneButtonCallback newFunction);
+  void attachDoubleClick(oneButtonCallback newFunction);
+  void attachPress(oneButtonCallback newFunction); // DEPRECATED, replaced by longPressStart, longPressStop and duringLongPress
+  void attachLongPressStart(oneButtonCallback newFunction);
+  void attachLongPressStop(oneButtonCallback newFunction);
+  void attachDuringLongPress(oneButtonCallback newFunction);
 
   // ----- State machine functions -----
 
@@ -68,12 +68,12 @@ private:
   bool _isLongPressed;
 
   // These variables will hold functions acting as event source.
-  callbackFunction _clickFunc;
-  callbackFunction _doubleClickFunc;
-  callbackFunction _pressFunc;
-  callbackFunction _longPressStartFunc;
-  callbackFunction _longPressStopFunc;
-  callbackFunction _duringLongPressFunc;
+  oneButtonCallback _clickFunc;
+  oneButtonCallback _doubleClickFunc;
+  oneButtonCallback _pressFunc;
+  oneButtonCallback _longPressStartFunc;
+  oneButtonCallback _longPressStopFunc;
+  oneButtonCallback _duringLongPressFunc;
 
   // These variables that hold information across the upcoming tick calls.
   // They are initialized once on program start and are updated every time the tick function is called.
